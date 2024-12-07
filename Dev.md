@@ -47,3 +47,48 @@ Example FFmpeg command:
 ffmpeg -i input.mp4 -hls_time 10 -hls_playlist_type vod output.m3u8
 
 ### Set Up Express Route for Serving HLS Content
+
+1. Install the required dependencies:
+   
+```
+const express = require('express');
+const app = express();
+const path = require('path');
+const { sign, verify } = require('jsonwebtoken');
+
+app.use('/videos', express.static(path.join(__dirname, 'videos')));
+
+app.get('/generate-signed-url', (req, res) => {
+  const videoPath = 'path/to/video.m3u8';
+  const token = sign({ videoPath }, 'your-secret-key', { expiresIn: '3h' });
+  res.json({ url: `/videos/${token}` });
+});
+
+app.get('/videos/:token', (req, res) => {
+  const { token } = req.params;
+  try {
+    const { videoPath } = verify(token, 'your-secret-key');
+    res.sendFile(path.join(__dirname, videoPath));
+  } catch (error) {
+    res.status(403).send('Unauthorized');
+  }
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+```
+
+Implement Frontend Video Player:
+
+Use a React video player component like react-player to play the HLS streams.
+```
+import React from 'react';
+import ReactPlayer from 'react-player';
+
+const VideoPlayer = ({ url }) => (
+  <ReactPlayer url={url} controls playing />
+);
+
+export default VideoPlayer;
+```
