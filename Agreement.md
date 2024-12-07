@@ -7,7 +7,7 @@ All Rights Reserved
 
 This Assignment contract (the "Agreement") is entered into on 3rd November, 2023, by and between Aztra LLC and _____________.
 
-## Agreement
+# Agreement
 
 ### 1. Scope of Work:
 
@@ -41,6 +41,8 @@ Aztra LLC will use its best efforts to provide high-quality services; however, A
 
 Aztra LLC acknowledges that user verification processes, specifically manual verification of user documents and access to user inboxes, may pose legal and ethical considerations. Aztra LLC will implement the verification processes as per the client's specifications, ensuring compliance with applicable laws and regulations. The client, ___________, assumes full responsibility for any legal issues that may arise from the use of the application, including but not limited to privacy concerns and disputes related to the verification process. Aztra LLC will not be held liable for any legal consequences resulting from the application's usage, and the client agrees to indemnify and hold Aztra LLC harmless from any claims, damages, or liabilities related to the application's use.
 
+This Agreement constitutes the entire understanding and agreement between the parties concerning the subject matter hereof and supersedes all prior and contemporaneous agreements and understandings, whether oral or written.
+
 IN WITNESS WHEREOF, the Parties hereto have executed this Software Development Agreement as of the Effective Date.
 
 ______________________________  
@@ -58,5 +60,3 @@ If you have any questions please contact
 ceo@altier.me  
 Copyright © Altier Tech 2024  
 All Rights Reserved  
-
-This Agreement constitutes the entire understanding and agreement between the parties concerning the subject matter hereof and supersedes all prior and contemporaneous agreements and understandings, whether oral or written.
